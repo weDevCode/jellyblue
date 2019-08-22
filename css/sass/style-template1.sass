@@ -1,0 +1,379 @@
+// SASS Document
+/*! CSS Document
+/*! Made with love by Team weDevCode - Leader Tien Minh Vy, All Right Reserved 
+/*! ### Copyright © 2019 by weDevCode - All Right Reserved ###
+/*! Thanks for purchase our projects :)
+/*! We'll support as much as we can ^_^
+/*!                ________              _________            .___       ___________                    
+/*! __  _  __ ____ \______ \   _______  _\_   ___ \  ____   __| _/____   \__    ___/___ _____    _____  
+/*! \ \/ \/ // __ \ |    |  \_/ __ \  \/ /    \  \/ /  _ \ / __ |/ __ \    |    |_/ __ \\__  \  /     \ 
+/*!  \     /\  ___/ |    `   \  ___/\   /\     \___(  <_> ) /_/ \  ___/    |    |\  ___/ / __ \|  Y Y  \
+/*!   \/\_/  \___  >_______  /\___  >\_/  \______  /\____/\____ |\___  >   |____| \___  >____  /__|_|  /
+/*!              \/        \/     \/             \/            \/    \/               \/     \/      \/ 
+/*! ### Social Contact ###
+/*! ==> To get newest Information, please subscribe one of our social profiles below:
+/*! Facebook Fanpage: https://tinyurl.com/wedevcode-facebook 
+/*! Twitter: https://tinyurl.com/wedevcode-twitter
+/*! Discord: N/A (Comming soon)
+/*! Reddit: https://tinyurl.com/wedevcode-reddit
+/*! Envato: https://themeforest.net/user/wedevcode
+/*! ==> If you want to support us, you can register to our membership page to get special offer below: N/A (Comming soon)
+/* Globals
+* {margin: 0; padding: 0}
+html, body
+    overflow-x: hidden
+.mobile
+    display: none
+    visibility: hidden
+/* Begin CSS
+
+// Assignment
+
+$navWidth: 80px;
+$themeColor: #158ADC
+
+/* Scrollbar
+
+/* width */
+::-webkit-scrollbar 
+    width: 10px
+
+/* Track */
+::-webkit-scrollbar-track 
+    background: #f1f1f1
+
+/* Handle */
+::-webkit-scrollbar-thumb 
+    background: #888
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover 
+    background: #555
+
+::-webkit-scrollbar-thumb:active
+    background: darken(#555, 20%)
+
+/* Header 
+
+
+nav 
+    position: fixed !important
+    width: 100%
+    height: $navWidth
+    background: #fff
+    z-index: 999
+    .nav
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        width: 75%
+        float: right
+        margin: 0 30px
+        .nav-item 
+            color: $themeColor
+            font-size: 20px
+            padding: 15px 30px
+    .logo
+        float: left
+        width: 172px
+        height: 70px
+    .mnav
+        display: none
+
+/* Main
+
+.top
+    width: 100%
+    height: 500px
+    background-image: url(data:image/png;base64,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)
+    background-repeat: no-repeat
+
+.welcome
+    padding: 0 !important
+
+.card
+    img
+        width: 286px
+        height: 190px
+main
+    .content
+        width: 100%
+        height: auto
+        padding: $navWidth 0
+    .info
+        padding: 156px 0
+    .aboutUsText
+        display: flex
+        justify-content: center
+        align-items: center
+        margin-bottom: 30px 
+    .ourServiceSect
+        padding-top: 20px 
+        perspective: 1000px
+    .ourServiceContent
+        justify-content: space-around
+        align-items: center
+        padding-top: 50px
+        transform-style: preserve-3d
+        .card
+            margin-top: 50px
+
+/* Our Service Card
+.card
+    transition: .5s;
+    cursor: pointer
+
+.card:hover 
+    transform: translateZ(50px)
+    box-shadow: 0 20px 10px grey
+
+/* Reviews Slider
+.slider
+    position: relative
+    perspective: 1000px
+    width: 100%
+    height: 300px
+    overflow: hidden
+    margin: 0 auto
+    .slide
+        transform-style: preserve-3d
+        display: flex
+        width: 2980px
+        text-align: center
+        justify-content: space-around
+        transition: 1s
+        .slide-content
+            width: 745px
+            img
+                border: 3px solid #DFE200
+                border-radius: 100px
+    .positionInCompany
+        padding: 0
+        margin: 0
+
+.review-stars
+    color: #DFE200
+    font-size: 30px
+
+form
+    margin: 0 auto;
+    perspective: 1000px
+    transform-style: preserve-3d
+    width: 360px
+    input
+        width: 100%
+        padding: 15px
+    button
+        color: white
+        border: none
+        width: 120px
+        background: $themeColor
+        padding: 15px
+        margin: 0 120px
+        transition: .1s
+        box-shadow: 6px 6px 0px #2c6186;
+        position: relative
+        top: 0
+        left: 0
+        &:before, &:after
+            transition: .1s
+            transform-origin: 0 50% 
+
+    button:hover
+        background: #0293f9
+    button:after
+        content: ''
+        width: 8px
+        height: 16px
+        background: #2c6186
+        position: absolute
+        transform: rotate(41deg)
+        z-index: -1
+        left: 5px
+        bottom: -2px
+    button:before
+        content: ''
+        width: 8px
+        height: 16px
+        background: #2c6186
+        position: absolute
+        transform: rotate(40deg)
+        z-index: -1
+        bottom: 39px
+        left: 115px
+    button:active
+        background: darken($themeColor, 20%)
+        outline: none
+        box-shadow: 0px 0px 0px #2c6186
+        top: 2px
+        left: 6px
+    button:active::after, button:active::before
+        outline: none
+        width: 0
+        height: 16px
+    *
+        margin: 15px 0
+
+/* Footer
+footer
+    a
+        color: white
+        transition: .3s
+    a:hover
+        text-decoration: none
+        color: darken($themeColor, 20%)
+    height: auto
+    background: $themeColor
+    color: white
+    width: 100%
+    .footer
+        padding: 30px 0
+        text-align: justify
+        display: flex
+        justify-content: space-between
+        ul
+            list-style: none
+        .socialContact
+            font-size: 50px
+        .border-desktop
+            border-left: 1px solid white 
+    .copyright
+        border-top: 1px solid white
+        height: 50px
+        background: $themeColor
+        display: flex
+        justify-content: center
+        align-items: center
+/* Responsive Web Design for Mobiles/Tablets
+/* Smaller Smartphone
+@media only screen and (max-width: 320px)
+    .top
+        background: $themeColor
+        color: white
+    .slider
+        width: 315px
+        .slide
+            width: 1260px !important
+            .slide-content
+                width: 315px
+                    
+
+/* Smartphones
+@media only screen and (min-width: 321px) and (max-width: 425px)
+    .slider
+        width: 315px
+        .slide
+            width: 1260px !important
+            .slide-content
+                width: 315px
+    .top
+        background: $themeColor
+        color: white
+
+@media only screen and (min-width: 426px) and (max-width: 479px)
+    .slider
+        width: 420px
+        .slide
+            width: 1680px !important
+            .slide-content
+                width: 420px
+    .top
+        background: $themeColor
+        color: white
+    
+
+/* Between
+@media only screen and (min-width: 480px) and (max-width: 767px)
+    .slider
+        width: 540px
+        .slide
+            width: 2160px
+            .slide-content
+                width: 540px
+
+/* iPads (portrait and landscape)
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+    .s1024b768
+        display: block !important
+        visibility: visible !important
+    .slider
+        width: 540px
+        .slide
+            width: 2140px
+            .slide-content
+                width: 540px
+
+/* Smaller than laptop 1200px
+@media only screen and (min-width: 1024px) and (max-width: 1200px)
+    .s1200b1024
+        display: block !important
+        visibility: visible !important
+    .desktop
+        visibility: hidden
+        display: none
+    .info
+        margin-left: 50px 
+    .slide
+        width: 2520px !important
+        .slide-content
+            width: 628px !important
+
+/* Have the same thing
+
+@media only screen and (min-width: 320px) and (max-width: 1200px)
+    .desktop
+        visibility: hidden
+        display: none
+    .mobile
+        visibility: visible
+        display: block
+    .border-desktop
+        border: none !important
+    .slider
+        height: 400px
+    nav
+        position: relative
+    .mnav
+        color: white
+        font-size: 20px
+        background: $themeColor
+        border: none
+        width: $navWidth / 2
+        height: $navWidth / 2
+        display: block !important
+        position: absolute
+        top: $navWidth / 4
+        bottom: $navWidth / 4
+        right: 0
+    .mnav:active
+        background: darken($themeColor, 20%)
+    .mobile-menu
+        z-index: 9999
+        position: fixed
+        height: 100%
+        width: 50%
+        background: $themeColor
+        color: white
+        left: -50%
+        a
+            color: white
+        .logo
+            width: 172px
+            height: 70px
+            background: white
+    footer
+        width: 
+        .footer
+            .col-12
+                text-align: center !important
+                margin: 0 auto !important
+                padding: auto !important
+            .fanpage
+                position: relative
+                height: 300px
+                .fb-page
+                    position: absolute
+                    top: 75px
+                    width: 50%
+                    left: 25%
+                    right: 25%
